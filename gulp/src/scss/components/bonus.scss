@@ -1,0 +1,111 @@
+:root {
+	--line-border-fill: #ef7c00;
+	--line-border-empty: #b4b4b4;
+}
+
+.bonus__cart {
+	background: #000000;
+	border: 1px solid #000000;
+	border-radius: 10px;
+	padding: 55px 30px 16px 30px;
+	display: flex;
+	flex-direction: column;
+}
+
+.bonus {
+	max-width: 500px;
+	width: 100%;
+	margin-right: 15px;
+}
+
+.bonus p {
+	font-family: 'Roboto';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 24px;
+	line-height: 28px;
+	text-transform: uppercase;
+	color: #000000;
+	margin-bottom: 35px;
+}
+
+.bonus__cart p {
+	font-family: 'Roboto';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 33px;
+	line-height: 28px;
+	text-transform: uppercase;
+	color: white;
+	margin-bottom: 50px;
+}
+
+.bonus__cart span {
+	font-family: 'Roboto';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 13px;
+	line-height: 15px;
+	color: #b4b4b4;
+}
+.bonus__cart .btn {
+	margin-top: 30px;
+}
+
+.progress-container::before {
+	content: '';
+	background: var(--line-border-empty);
+	position: absolute;
+	top: 50%;
+	left: 0;
+	transform: translateY(-50%);
+	height: 4px;
+	width: 100%;
+	z-index: 0;
+}
+
+.progress-container {
+	display: inline-flex;
+	justify-content: space-between;
+	position: relative;
+	max-width: 100%;
+	width: 100%;
+}
+
+.progress {
+	background: var(--line-border-fill);
+	position: absolute;
+	top: 50%;
+	left: 0;
+	transform: translateY(-50%);
+	height: 4px;
+	width: 0%;
+	z-index: 1;
+	transition: 0.4s ease;
+}
+
+.circle {
+	color: #999;
+	transition: 0.4s ease;
+	color: var(--line-border-empty);
+	top: -15px;
+	position: relative;
+	font-size: 13px;
+}
+
+.circle.active {
+	color: var(--line-border-fill);
+}
+
+.circle:nth-child(2) {
+	right: -25%;
+}
+
+.circle:nth-child(3) {
+	right: -20%;
+}
+
+.circle:nth-child(4) {
+	right: -10%;
+}
+ 

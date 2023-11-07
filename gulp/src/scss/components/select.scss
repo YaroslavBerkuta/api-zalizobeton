@@ -1,0 +1,135 @@
+.js-select {
+    position: relative;
+    width: 180px;
+    cursor: pointer;
+}
+
+.js-select .value-row {
+    color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #B4B4B4;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.1s linear;
+    height: 50px;
+}
+
+.js-select:hover .value-row {
+    border-radius: 10px 10px 0 0 ;
+}
+
+.js-select .value-row p { 
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24px;
+    color: #fff;
+    flex: 1
+}
+
+.js-select .value-row img {
+    width: 18px;
+}
+.js-select .list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0,0,0,.6);
+    border: 1px solid #B4B4B4;
+    border-radius: 0 0 10px 10px;
+    transform: scale(0);
+    transform-origin: inherit 0;
+    transition: all 0.1s linear 0.1s;
+}
+
+.js-select:hover .list {
+    transform: scale(1);
+}
+
+.js-select .list div {
+    color: #fff;
+    font-size: 16px;
+    padding: 10px;
+    border-bottom: 1px solid #B4B4B4;
+}
+
+.js-select .list div:last-child {
+    border-bottom: none;
+}
+
+.js-select .list div:hover {
+    background-color: #fff;
+    color: #000
+}
+
+.counter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+    border-radius: 10px;
+    border: 1px solid #B4B4B4;
+    width: 140px;
+    height: 50px;
+}
+
+.counter p,
+.counter button {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+    text-transform: uppercase;
+    color: #F7F7F7;   
+}
+
+.counter button.simbol {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   cursor: pointer;
+    translate: all 0.2s linear;
+    height: 50px;
+}
+
+.counter p.simbol:hover {
+    transform: scale(1.1);
+}
+
+
+
+.autocomplete {
+    position: relative;
+
+
+    .options { 
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        border: 1px solid rgba(0,0,0,.1);
+        max-height: 200px;
+        overflow: auto;
+        z-index: 10;
+        display: none;
+        &.active {
+            display: block;
+        }
+    }
+
+    .js-option { 
+        padding: 5px 10px;
+        font-size: 12px;
+        line-height: 1.4;
+        opacity: 0.7;
+        cursor: pointer;
+        &:hover { 
+            opacity: 1;
+        }
+
+    }
+}

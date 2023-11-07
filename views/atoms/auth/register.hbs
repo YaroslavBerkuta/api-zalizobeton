@@ -1,0 +1,53 @@
+<div class='popup register'>
+	<form class='login__wrapper' id="js-sign-up">
+		<div class='login__header'>
+			<h4>{{> svg/ar-left}}Зареєструватись</h4>
+			<div class='popup__close'>{{> svg/close}}</div>
+		</div>
+
+		<div class='form__inputs'>
+			<div class='form__input'>
+				<p>Ім’я<span>*</span></p>
+				<label for=''>
+					<input name="name" type='text' placeholder='Ім’я' />
+				</label>
+			</div>
+			<div class='form__input'>
+				<p>E-mail<span>*</span></p>
+				<label for=''>
+					<input name="email" type='email' placeholder='E-mail' />
+				</label>
+			</div>
+			<div class='form__input'>
+				<p>Створити пароль<span>*</span></p>
+				<label for=''>
+					<input name="password" type='password' placeholder='Пароль' />
+					<span id="hide-password" class="active">{{> svg/eye-close}}</span>
+                    <span id="view-password">{{> svg/eye}}</span>
+				</label>
+			</div>
+			<div class='login__after login__after-column'>
+				<div class='checkbox-item checkbox-login' data-password-save='save-password'>
+					<div class='checkbox-icon'></div>
+					<p>Запам’ятати пароль</p>
+				</div>
+				<div class='checkbox-item checkbox-login' data-opt='opt'>
+					<div class='checkbox-icon'></div>
+					<p>Я хочу бути гуртовим покупцем</p>
+				</div>
+				<div class='checkbox-item checkbox-login' data-referal='referal'>
+					<div class='checkbox-icon'></div>
+					<p>Я маю реферальний код</p>
+					<input type='text' placeholder='Введіть код' class='referal__code' disabled/>
+				</div>
+			</div>
+
+			<div class='login__btns'>
+				<button class='btn btn-outline btn-black'>Увійти</button>
+				<a class='btn-link' href='/privacy-policy' target='_blank'>Натиснувши кнопку «Створити обліковий
+					запис», Ви приймаєте умови Політики конфіденційності, Правила та умови
+					використання сайту</a>
+			</div>
+		</div>
+	</form>
+</div>

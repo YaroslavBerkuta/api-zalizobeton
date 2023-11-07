@@ -1,0 +1,62 @@
+<div id="header" class="header auto-height-resourse fixed">
+
+    <nav class="nav">
+        <div class="container nav__row">
+            <a href="/"><img src="/images/logo.svg" alt="" class="nav__logo logo"></a>
+            <div class="nav__list">
+                {{#each topMenu.children }}
+                    <a href="{{ this.url }}" class="nav__list__link" role="link">{{> svg/new}}{{ this.translate.name }}</a>
+                {{/each }}
+                {{!-- <a href="#" class="nav__list__link" role="link">{{> svg/gift}}Акції</a> --}}
+                {{!-- <a href="/about-us" class="nav__list__link" role="link">{{> svg/search}}про нас</a> --}}
+                {{!-- <a href="/contacts" class="nav__list__link" role="link">{{> svg/phone}}контакти</a> --}}
+            </div>
+
+            <div class="nav__account">
+                <a href="/products/favorities" class="nav__account__like {{#isFavoritiesPage}}active{{/isFavoritiesPage}}" role="button"><p>Вибране</p>{{> svg/like}}</a>
+                <div class="nav__bucket__btn js-empty" role="button" id="js-bucket-btn">
+                    <p>КОШИК</p>
+                    {{> svg/bucket}}
+
+                    <div class="bucket-preview-count" id="js-bucket-count">1</div>
+
+                    <div class="bucket">
+                        <div class="bucket-list" id="bucket-list"></div>
+
+                        <a href="/checkout" class="btn btn-outline btn-bucket-order">
+                            Оформити
+                        </a>
+                    </div>
+                </div>
+                <div class="nav__account__btn" role="button">
+                    {{#if user.id }}  <p>АККАУНТ</p> {{/if }}
+                    {{#unless user.id }}  <p>УВІЙТИ</p> {{/unless }}
+                    {{> svg/user}}
+                </div>
+            </div>
+            <div class="burger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+        </div>
+    </nav>
+    <div class="nav__mobil">
+                
+    </div>
+
+    <nav class="subnav">
+        <div class="container subnav__row">
+            <div class="subnav__list">
+                {{#each secondMenu.children }}
+                    <a href="{{ this.url }}" class="subnav__list__link" role="link">{{ this.translate.name }}</a>
+                {{/each }}
+            </div>
+            <div class="subnav__search">
+                <input type="text" class="subnav__search_input" id="search" value="{{ pagination.searchString }}">
+                {{> svg/search }}   
+            </div>
+        </div>
+    </nav>
+
+</div>

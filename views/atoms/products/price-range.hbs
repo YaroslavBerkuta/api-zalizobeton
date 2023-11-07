@@ -1,0 +1,22 @@
+<div class="price-range">
+
+    <p>ЦІНА</p>
+    
+    <div class="price-range-top">
+        <p class="first">Від {{ params.priceFromLabel }} грн</p>
+        <p class="second">До {{ params.priceToLabel }} грн </p>
+    </div>
+    
+    <div class="js-range-slider-wrapp">
+        <input 
+        type="text" 
+        class="js-range-slider" 
+        name="my_range" 
+        value="" 
+        data-min="0"
+        data-max="{{ params.max }}" 
+        data-from="{{ params.priceFrom }}"
+        data-to="{{ params.priceTo }}" />
+    </div>
+
+</div>

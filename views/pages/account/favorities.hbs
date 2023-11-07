@@ -1,0 +1,34 @@
+{{> account/account-head }}
+<section class="section bg-white">
+    <div class="container">
+        <div class="account">
+            <div class="account__wrapper">
+                <div class="account__top">
+                    {{> account/bonus-block }}
+                    {{> account/special-proposal }}  
+                </div>
+                <div class="account__bottom">
+                    {{> account/menu isFavorities=1 }}
+                    <div class="account__content" id="account__content">
+                        
+                        <p class="account__block-title">Обрані товари</p>
+
+                        <table class="cc-products-tabel favorities-products-table">
+                            {{#each products as |product|}}
+                                <tr class="checkout-product-row">
+                                    <td><p>{{product.id}}</p></td>
+                                    <td><img src="{{product.previewMediaUrl}}" alt=""></td>
+                                    <td><p class="title">{{product.translate.name}}</p></td>
+                                    <td><p class="amount">{{product.price}} <span>грн.</span></p></td>
+                                    <td><button class="js-favorite-btn-account" data-product-id="{{product.id}}">{{>svg/close}}</button></td>
+                                </tr>
+                            {{/each}}
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

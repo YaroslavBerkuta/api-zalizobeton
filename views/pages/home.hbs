@@ -1,0 +1,167 @@
+<section class="slider">
+  <div class="home-slider">
+
+    {{#each content.homeSlider as |item|}}
+      {{> home-slider-item item=item}}
+    {{/each}}
+  </div>
+  <div class="home-slider-controls">
+    <div class="slider-controls">
+      <button type="button" class="slide-button slide-m-prev">{{> svg/ar-left}}</button>
+      <div class="slide-m-dots"></div>
+      <button type="button" class="slide-button slide-m-next">{{> svg/ar-right}}</button>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <p class="section__title">Новинки</p>
+    <div class="home-news">
+       {{#each products as |product|}}
+          {{> product-block product=product}}
+      {{/each}}
+    </div>
+    <div class="home-news-controls">
+      <div class="slider-controls">
+        <button type="button" class="slide-button slide-m-prev">{{> svg/ar-left}}</button>
+        <div class="slide-m-dots"></div>
+        <button type="button" class="slide-button slide-m-next">{{> svg/ar-right}}</button>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section sectons-cats">
+  <div class="container">
+  <p class="section__title">КАТЕГОРІЇ</p>
+  <div class="hcats">
+    <div class="hcats__coll">
+      <div class="hcats__row">
+        
+        {{#if categories.[0]}}
+          <div class="hcats__item small" style="background-image: url({{ categories.0.image }})" >
+            <p>{{ categories.0.category.translate.name}}</p>
+          </div>
+        {{/if}}
+
+        {{#if categories.[1]}}
+          <div class="hcats__item small" style="background-image: url({{ categories.1.image }})" >
+            <p>{{ categories.1.category.translate.name}}</p>
+          </div>
+        {{/if}}
+
+        {{#if categories.[2]}}
+          <div class="hcats__item small" style="background-image: url({{ categories.2.image }})" >
+            <p>{{ categories.2.category.translate.name}}</p>
+          </div>
+        {{/if}}
+
+        {{#if categories.[3]}}
+          <div class="hcats__item small" style="background-image: url({{ categories.3.image }})" >
+            <p>{{ categories.3.category.translate.name}}</p>
+          </div>
+        {{/if}}
+      </div>
+      {{#if categories.[5]}}
+        <div class="hcats__item large" style="background-image: url({{ categories.5.image }})" >
+         <p>{{ categories.5.category.translate.name}}</p>
+        </div>
+      {{/if}}
+      <div class="hcats__row">
+        {{#if categories.[8]}}
+          <div class="hcats__item small" style="background-image: url({{ categories.8.image }})" >
+            <p>{{ categories.8.category.translate.name}}</p>
+          </div>
+        {{/if}}
+
+         {{#if categories.[9]}}
+          <div class="hcats__item small" style="background-image: url({{ categories.9.image }})" >
+            <p>{{ categories.9.category.translate.name}}</p>
+          </div>
+        {{/if}}
+      </div>
+    </div>
+    <div class="hcats__coll">
+      {{#if categories.[4]}}
+        <div class="hcats__item large" style="background-image: url({{ categories.4.image }})" >
+         <p>{{ categories.4.category.translate.name}}</p>
+        </div>
+      {{/if}}
+      <div class="hcats__row">
+         {{#if categories.[6]}}
+          <div class="hcats__item small" style="background-image: url({{ categories.6.image }})" >
+            <p>{{ categories.6.category.translate.name}}</p>
+          </div>
+        {{/if}}
+
+         {{#if categories.[7]}}
+          <div class="hcats__item small" style="background-image: url({{ categories.7.image }})" >
+            <p>{{ categories.7.category.translate.name}}</p>
+          </div>
+        {{/if}}
+      </div>
+
+      {{#if categories.[10]}}
+        <div class="hcats__item large" style="background-image: url({{ categories.10.image }})" >
+         <p>{{ categories.10.category.translate.name}}</p>
+        </div>
+      {{/if}}
+    </div>
+  </div>
+</section>
+
+
+<section class="section section-features">
+  <div class="container">
+    <div class="features">
+
+      {{#each content.features as |item|}}
+        <div class="features__item">
+          <div class="features__icon">
+            {{{ item.svg }}}
+          </div>
+          <div>
+            <p class="title">{{item.name}}</p>
+            <p class="subtitle">{{item.description}}</p>
+          </div>
+        </div>
+      {{/each}}
+
+       
+    </div>
+  </div>
+
+</section>
+
+<section class="section section-form">
+  <div class="container">
+   <form id="employer-form" class="hform">
+     <div class="left">
+      <p class="hform__title">Хочете стати гуртовим покупцем?</p>
+      <p class="hform__description">Залиште контакти для подання заявки</p>
+    </div>
+    <div class="right">
+      <div class="inputs">
+        <input name="name" required type="text" class="form-controll" placeholder="Введіть ім’я">
+        <input name="phoneNumber" required type="text" class="form-controll" placeholder="Введіть номер телефону">
+      </div>
+      <button class="btn hform__btn"><p>надіслати</p></button>
+    </div>
+
+   </form>
+  </div>
+</section>
+
+
+
+<section class="section sectons-inst">
+  <div class="container">
+    <p class="section__title">Наш instagram</p>
+
+    <div class="inst__row">
+      {{#each instagramPosts as |post|}}
+        <a href="{{post.permalink}}" target="_blank"><img src="{{post.media_url}}" alt="{{post.id}}"></a>
+      {{/each}}
+    </div>
+  </div>
+</section>
+

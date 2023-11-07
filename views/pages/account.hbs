@@ -1,0 +1,104 @@
+<section class="section">
+      <div class="container">
+         <div class="breadcrumbs">
+            <p><a href="/">{{> svg/ar-left}} Головна</a></p>
+            <p><a href="/">/</a></p>
+            <p>Акаунт</p>
+        </div>
+        <div class="accoutn__title">
+            <p>{{data.firstName}} {{data.lastName}}/</p>
+            <p>{{data.id}}</p>
+        </div>
+      </div>
+</section>
+<section class="section bg-white">
+    <div class="container">
+        <div class="account">
+            <div class="account__wrapper">
+                <div class="account__top">
+                    <div class="bonus">
+                        <p>Бонусна система</p>
+                        <div class="bonus__cart">
+                            <p>{{data.bonus}} Бонусів на рахунку</p>
+                            <div class="progress-container">
+                                <div class="progress" id="progress" data-bonus={{data.bonus}}></div>
+                                <div class="circle">100</div>
+                                 <div class="circle">200</div>
+                                <div class="circle">250</div>
+                                <div class="circle">300</div>
+                            </div>
+                            <span>1 бонус = 1 гривня</span>
+                            <a href="/products" class="btn btn-outline btn-white">Перейти в каталог</a>
+                        </div>
+                    </div>
+                    <div class="sale">
+                        <p>Спеціальні пропозиції</p>
+                        <div id="sale-slider">
+                            {{> sale/sale-slide}}
+                            {{> sale/sale-slide}}
+                            {{> sale/sale-slide}}
+                            {{> sale/sale-slide}}
+                        </div>
+                         <div class="home-slider-controls">
+                            <div class="slider-controls">
+                                <button type="button" class="slide-button slide-m-prev">{{> svg/ar-left}}</button>
+                                <div class="slide-m-dots"></div>
+                                <button type="button" class="slide-button slide-m-next">{{> svg/ar-right}}</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="account__bottom">
+                    <div class="account__panel">
+                        <div class="panel__item" id="cart">
+                            <a>
+                                {{> svg/bucket}}
+                                <p>Кошик</p>
+                                 {{> svg/ar-right}}
+                            </a>
+                        </div>
+                        <div class="panel__item" id="liked">
+                            <a>
+                                {{> svg/like}}
+                                <p>Вибране</p>
+                                 {{> svg/ar-right}}
+                            </a>
+                        </div>
+                        <div class="panel__item" id="bonus">
+                            <a>
+                                {{> svg/gift}}
+                                <p>Бонуси</p>
+                                 {{> svg/ar-right}}
+                            </a>
+                        </div>
+                        <div class="panel__item" id="purchaseHistory">
+                            <a>
+                                {{> svg/record}}
+                                <p>Історія покупок</p>
+                                 {{> svg/ar-right}}
+                            </a>
+                        </div>
+                        <div class="panel__item" id="accountSetting">
+                            <a>
+                                {{> svg/setting}}
+                                <p>Налаштування профілю</p>
+                                 {{> svg/ar-right}}
+                            </a>
+                        </div>
+                        <div class="panel__item" id="logout">
+                            <a>
+                                {{> svg/logout}}
+                                <p>Вийти з облікового запису</p>
+                                 {{> svg/ar-right}}
+                            </a>
+                        </div>
+                    </div>
+                    <div id="account__content">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

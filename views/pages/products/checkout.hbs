@@ -1,0 +1,180 @@
+<section class="section">
+    <div class="container">
+        <div class="breadcrumbs">
+            <p><a href="/">{{> svg/ar-left}} Головна</a></p>
+            <p><a href="/">/</a></p>
+            <p>Оформлення замовлення</p>
+        </div>
+
+        <div class="accoutn__title">
+            <p>Оформлення замовлення</p>
+        </div>
+    </div>
+</section>
+
+
+<form id="js-checkout-form">
+
+<section class="section bg-white">
+    <div class="container">
+        <div class="checkout__container">
+            <div class="checkout__coll">
+                <p class="checkout__coll-title">Заповніть контактну форму</p>
+                <div class="checkout__coll-content">
+                   <div class="checkout__block">
+                        <p class="checkout__subtitle">Ваші дані</p>
+                        <input
+                            type="text"
+                            name="name"
+                            class="checkout__input"
+                            placeholder="Прізвище та ім’я"
+                            minlength="3"
+                            value="{{ prefilData.name }}"
+                            required
+                        />
+
+                        <div class="checkout__inputs-row">
+                            <input
+                                type="text"
+                                name="phoneNumber"
+                                class="checkout__input"
+                                placeholder="Номер телефону"
+                                minlength="3"
+                                    value="{{ prefilData.phoneNumber }}"
+                                required
+                            />
+                            <input
+                                type="text"
+                                name="email"
+                                class="checkout__input"
+                                placeholder="E-mail"
+                                minlength="3"
+                                value="{{ prefilData.email }}"
+                                required
+                            />
+                        </div>
+
+                        <div class="checkout__checkbox">
+                            <input type="checkbox" checked required>
+                            <div class="point"></div>
+                            <p>Даю згоду  на обробку персональних даних</p>
+                        </div>
+
+                   </div>
+
+                    <div class="checkout__block js-tabs">
+                        <p class="checkout__subtitle">Способи доставки</p>
+
+                        <div class="checkout__inputs-row checkout__checkbox_mb">
+                            <div class="checkout__checkbox">
+                                <input
+                                    class="js-tab-option" 
+                                    type="radio" 
+                                    name="delivery" 
+                                    value="np" 
+                                    {{#if prefilData.isShippingNP }}checked {{/if}}
+                                >
+                                <div class="point"></div>
+                                <p>Нова пошта</p>
+                            </div>
+                            <div class="checkout__checkbox">
+                                <input 
+                                    class="js-tab-option" 
+                                    type="radio" 
+                                    value="ukr"
+                                    name="delivery" 
+                                    {{#if prefilData.isShippingUKR }}checked {{/if}}
+                                >
+                                <div class="point"></div>
+                                <p>Укрпошта</p>
+                            </div>
+                        </div>
+
+                        <div class="js-tab js-tab-np active">
+                            <div class="autocomplete" id="js-autocomplete-np-city">
+                                <input
+                                    type="text"
+                                    name="np_town"
+                                    class="checkout__input"
+                                    placeholder="Оберіть місто"
+
+                                />
+                                <div class="options"></div>
+                            </div>
+
+                            <div class="autocomplete" id="js-autocomplete-np-warehouse">
+                                <input
+                                    type="text"
+                                    name="np_viddil"
+                                    class="checkout__input"
+                                    placeholder="Номер відділення"
+
+                                />
+                                <div class="options"></div>
+                            </div>
+                        </div>
+                        <div class="js-tab js-tab-ukr">
+                             <input
+                                type="text"
+                                name="ukrposhta_city"
+                                class="checkout__input"
+                                placeholder="Оберіть місто"
+                                value="{{ prefilData.upTown }}"
+
+                            />
+                            <input
+                                type="text"
+                                name="ukrposhta_address"
+                                class="checkout__input"
+                                placeholder="Адресса відділення"
+                                value="{{ prefilData.upDepartmentAddress }}"
+                            />
+                        </div>
+                    </div>
+
+                    <div class="checkout__block">
+                        <p class="checkout__subtitle">Способи оплати</p>
+
+
+                        <div class="checkout__checkbox checkout__checkbox_mb">
+                            <input type="radio" name="payment_method" required value="online">
+                            <div class="point"></div>
+                            <p>Безготівковий розрахунок</p>
+                        </div>
+
+                        <div class="checkout__checkbox">
+                            <input type="radio" name="payment_method" required value="offline" checked>
+                            <div class="point"></div>
+                            <p>Оплата при отриманні</p>
+                        </div>
+
+                    </div>
+
+                    <div class="checkout__block">
+                        <p class="checkout__subtitle">Коментар до замовлення</p>
+
+                        <textarea
+                            type="text"
+                            name="comment"
+                            class="checkout__input"
+                            placeholder="Додай свій коментар до замовлення"
+                        ></textarea>
+                    </div>
+
+
+                </div>
+
+            </div>
+            <div class="checkout__coll">
+                <p class="checkout__coll-title">Ваше замовлення</p>
+
+                <div id="js-checkout-content" data-max-bonuses="{{ user.bonus }}"></div>
+
+            </div>
+
+
+        </div>
+    </div>
+</section>
+
+</form>

@@ -1,0 +1,53 @@
+
+
+<section class="section auto-height-target">
+    <div class="container">
+        <div class="breadcrumbs">
+            <p><a href="/">{{> svg/ar-left}} Головна</a></p>
+            <p><a href="/">/</a></p>
+            <p>Товари</p>
+        </div>
+        <div class="wrapper product-wrapper">
+            <div class="sidebar">
+                <h2 class="h2-title">Товари</h2>
+
+                <div class="sidebar__filter">
+                    <button>
+                        {{> svg/filter}}
+                    </button>
+                    <div class="sidebar__filter-items"></div>
+                </div>
+                {{> products/sort-checkbox }}
+                {{> products/price-range }}
+
+                
+                <div class="checkbox-list">
+
+                    {{#each categories as |category|}}
+                        <a href="/products/{{category.key}}" class="checkbox-item">
+                            <p>{{ category.translate.name }}</p>
+                            <div class="checkbox-icon"></div>
+                        </a>
+                    {{/each}}
+
+                </div>
+            </div>
+            <div class="content">
+
+                {{#if isEmpty}}
+                    <div class="list-empty">
+                        <p>По заданих параметрах товари відстуні</p>
+                    </div>
+                {{/if}}
+
+                <div class="products-list">
+                    {{#each products as |product|}}
+                        {{> product-block product=product}}
+                    {{/each}}
+                </div>
+
+                {{> pagination}}
+            </div>
+        </div>
+    </div>
+</section>

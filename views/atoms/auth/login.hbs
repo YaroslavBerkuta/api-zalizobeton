@@ -1,0 +1,37 @@
+<div class="popup login">
+	<form class="login__wrapper">
+		<div class="login__header">
+			<h4>Увійти</h4>
+            <div class="popup__close">{{> svg/close}}</div>
+		</div>
+
+        <div class="form__inputs">
+            <div class="form__input">
+                <p>E-mail<span>*</span></p>
+                <label>
+                    <input type="email" placeholder="E-mail" name="email">
+                </label>
+            </div>
+            <div class="form__input">
+                <p>Пароль<span>*</span></p>
+                <label>
+                    <input type="password" placeholder="Пароль" name="password">
+                    <span id="hide-password" class="active">{{> svg/eye-close}}</span>
+                    <span id="view-password">{{> svg/eye}}</span>
+                </label>
+            </div>
+            <div class="login__after">
+                <div class="checkbox-item checkbox-login" data-password-save="save-password">
+                    <div class="checkbox-icon"></div>
+                    <p>Запам’ятати пароль</p>
+                </div>
+                <button class="btn-link">Не памятаєш пароль?</button>
+            </div>
+
+            <div class="login__btns">
+                <button class="btn btn-outline btn-black" id="login" type="submit">Увійти</button>
+                <button class="btn-link">Створити новий обліковий запис</button>
+            </div>
+        </div>
+	</form>
+</div>

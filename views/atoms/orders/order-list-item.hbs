@@ -1,0 +1,41 @@
+<div class="order-item js-toggle">
+
+    <div class="order-head ">
+        <div class="coll">
+            <p>Замовлення <span>#{{order.id}}</span></p>
+            
+            {{#if order.isNPDelivery}}
+                <p>Доставка: <span>Нова почта</span></p>
+            {{/if}}
+
+            {{#unless order.isNPDelivery}}
+                <p>Доставка: <span>Укр. пошта</span></p>
+            {{/unless}}
+
+            <p>Статус: <span>{{ order.statusLabel }}</span></p>
+
+        </div>
+        <div class="coll">
+            <p>Дата створення: <span>{{ order.createdAtLabel }}</span></p>
+            <p>Тип оплати: <span>{{ order.paymentLabel }}</span></p>
+            <p>Загальна сума до оплати: {{ nettoAmount }} грн. </p>
+        </div>
+
+        <div class="toggle-btn js-toggle-btn"><i class="arrow down"></i></div>
+    </div>
+
+    <div class="order-products js-toggle-content">
+
+         <table class="cc-products-tabel favorities-products-table">
+            {{#each order.orderProducts as |product| }}
+                <tr class="checkout-product-row">
+                    <td><p>{{product.id}}</p></td>
+                    <td><img src="{{product.previewMedia.path}}" alt=""></td>
+                    <td><p class="title">{{product.translate.name}}</p></td>
+                    <td><p class="title">{{product.count}} шт.</p></td>
+                    <td><p class="amount">{{product.nettoAmount}} <span>грн.</span></p></td>
+                </tr>
+            {{/each }}
+        </table>
+    </div>
+</div>

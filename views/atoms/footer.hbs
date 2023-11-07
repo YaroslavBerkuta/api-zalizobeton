@@ -1,0 +1,25 @@
+<footer class="footer auto-height-resourse">
+    <div class="container">
+        <div class="footer__row">
+            <div class="logo">
+                <a href="/"><img src="/images/logo.svg" alt="" class="footer__logo logo"></a>
+            </div>
+            <div class="footer__menu">
+                <div class="list">
+                    {{#each footerMenu.children }}
+                        <a href="{{ this.url }}" role="link">{{ this.translate.name }}</a>
+                    {{/each }}
+                </div>
+            </div>
+            <div class="footer__contacts">
+                <div class="footer__contacts-icons">
+                    <a href="#">{{> svg/contacts}}</a>
+                    <a href="#">{{> svg/inst}}</a>
+                    <a href="#">{{> svg/facebook}}</a>
+                </div>
+                <a href="#" class="link">Політика конфіденційності</a>
+                <p class="copyring">© Всі права захищені</p>
+            </div>
+        </div>
+    </div>
+</footer>

@@ -1,0 +1,78 @@
+{{> account/account-head }}
+<section class="section bg-white">
+    <div class="container">
+        <div class="account">
+            <div class="account__wrapper">
+                <div class="account__top">
+                    {{> account/bonus-block }}
+                    {{> account/special-proposal }}  
+                </div>
+                <div class="account__bottom">
+                    {{> account/menu isSettings=1 }}
+                    <div class="account__content" id="account__content">
+                        
+                        <p class="account__block-title">Налаштування профайлу</p>
+
+                        <form id="edit-account-form" class="account-form">
+                            <input
+                                type="text"
+                                name="firstName"
+                                class="checkout__input"
+                                placeholder="Ім’я"
+                                minlength="3"
+                                value="{{ account.firstName }}"
+                                required
+                            />
+
+                            <input
+                                type="text"
+                                name="lastName"
+                                class="checkout__input"
+                                placeholder="Прізвище"
+                                minlength="3"
+                                value="{{ account.lastName }}"
+                                required
+                            />
+
+                            <input
+                                type="text"
+                                name="email"
+                                class="checkout__input"
+                                placeholder="Email"
+                                minlength="3"
+                                value="{{ account.email }}"
+                                disabled
+                                required
+                            />
+
+                            <button class="btn-primary">Зберегти</button>
+                        </form>
+
+                        <p class="account__block-title">Змінити пароль</p>
+
+                        <form id="edit-password-form">
+                             <input
+                                type="password"
+                                name="oldPassword"
+                                class="checkout__input"
+                                placeholder="Попередній пароль"
+                                minlength="3"
+                                required
+                            />
+                            <input
+                                type="password"
+                                name="newPassword"
+                                class="checkout__input"
+                                placeholder="Новий пароль"
+                                minlength="3"
+                                required
+                            />
+                             <button class="btn-primary">Зберегти</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

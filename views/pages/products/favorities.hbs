@@ -1,0 +1,29 @@
+
+
+<section class="section auto-height-target">
+    <div class="container">
+        <div class="breadcrumbs">
+            <p><a href="/">{{> svg/ar-left}} Головна</a></p>
+            <p><a href="/">/</a></p>
+            <p>Вибране</p>
+        </div>
+        <div class="products-news">
+            <div class="content">
+
+                {{#if isEmpty}}
+                    <div class="list-empty">
+                        <p>По заданих параметрах товари відстуні</p>
+                    </div>
+                {{/if}}
+
+                <div class="products-list">
+                    {{#each products as |product|}}
+                        {{> product-block product=product}}
+                    {{/each}}
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>

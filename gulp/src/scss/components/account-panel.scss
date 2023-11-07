@@ -1,0 +1,78 @@
+.panel__item a svg path {
+	fill: black;
+}
+.panel__item a svg {
+	width: 25px;
+	height: 25px;
+}
+.panel__item a p {
+	font-family: 'Roboto';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 20px;
+	line-height: 23px;
+	color: #000000;
+	margin-right: auto;
+	margin-left: 15px;
+}
+.panel__item {
+	cursor: pointer;
+}
+.panel__item.active {
+	background: #000000;
+
+}
+
+.panel__item.active a svg path{
+    fill: white;
+}
+.panel__item.active a p{
+    color: white;
+}
+
+
+.panel__item:hover {
+	background: #000000;
+}
+
+.panel__item:hover a svg path{
+    fill: white;
+}
+.panel__item:hover a p{
+    color: white;
+}
+
+
+.panel__item a {
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+	padding: 33px;
+}
+.panel__item:not(:last-child) {
+	border-bottom: 1px solid #b4b4b4;
+}
+
+.account__panel {
+	border: 1px solid #b4b4b4;
+	border-radius: 10px;
+	max-width: 500px;
+	width: 100%;
+	overflow: hidden;
+}
+
+@media only screen and (max-width: 1650px) {
+	.account__bottom {
+		margin-top: 50px;
+	}
+	.account__panel {
+		max-width: 400px;
+	}	
+
+	.panel__item a {
+		padding: 20px;
+	}
+	.panel__item a p {
+		font-size: 16px;
+	}
+}

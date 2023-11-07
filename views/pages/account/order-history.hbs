@@ -1,0 +1,30 @@
+
+
+{{> account/account-head }}
+<section class="section bg-white">
+    <div class="container">
+        <div class="account">
+            <div class="account__wrapper">
+                <div class="account__top">
+                    {{> account/bonus-block }}
+                    {{> account/special-proposal }}  
+                </div>
+                <div class="account__bottom">
+                    {{> account/menu isHistory=1 }}
+                    <div class="account__content" id="account__content">
+
+                        <p class="account__block-title">Історія покупок</p>
+                        
+                        {{#each items as |order|}} 
+
+                            {{> orders/order-list-item order=order }}
+
+                        {{/each }}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

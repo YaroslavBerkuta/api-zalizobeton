@@ -1,0 +1,47 @@
+.price-range .irs--flat .irs-line {
+    height: 5px;
+}
+
+.price-range .irs--flat .irs-bar {
+    height: 5px;
+    background-color: #44D702;
+}
+
+
+.price-range .irs--flat .irs-handle>i:first-child {
+    width: 19px;
+    height: 19px;
+    top: -4px;
+    border-radius: 100px;
+    background-color: #44D702!important;
+}
+
+
+.price-range-top { 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price-range-top p {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 15px;
+    color: #44D702;
+}
+
+.price-range {
+    margin-bottom: 22px;
+}
+
+.js-range-slider {
+    background-color: transparent;
+    border: none;
+    visibility: hidden;
+
+}
+
+.js-range-slider-wrapp {
+    min-height: 40px;
+}

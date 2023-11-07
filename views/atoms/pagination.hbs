@@ -1,0 +1,20 @@
+ <div class="pagination">
+
+    {{#if pagination.prevLink}}
+        <a href="{{pagination.prevLink}}">{{> svg/ar-left}}</a>
+    {{/if}}
+
+    {{#each pagination.btnsLinks as |link|}}
+        {{#if link.isActive}}
+            <a href="#" class="pagination__item active">{{link.label}}</a>
+        {{else}}
+            <a class="pagination__item" href="{{link.url}}">{{link.label}}</a>
+        {{/if}}
+    {{/each}}
+
+        {{#if pagination.nextLink}}
+        <a href="{{pagination.nextLink}}">{{> svg/ar-right}}</a>
+    {{/if}}
+
+
+</div>

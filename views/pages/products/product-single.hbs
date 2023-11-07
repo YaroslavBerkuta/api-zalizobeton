@@ -1,0 +1,161 @@
+<section class="section auto-height-target">
+    <div class="container">
+
+         <div class="breadcrumbs">
+            <p><a href="/">{{> svg/ar-left}} Головна</a></p>
+            <p><a href="/">/</a></p>
+
+            <p><a href="/products">Товари</a></p>
+            <p><a href="/products">/</a></p>
+
+            <p><a href="/products/{{category.key}}">{{category.translate.name}}</a></p>
+            <p><a href="/products/{{category.key}}">/</a></p>
+            
+            <p>{{ translate.name }}</p>
+        </div>
+
+        <div class="product-single">
+            <div class="product-single-head">
+                <div class="product-gallery product-single-block">
+                    <div id="product-slider-root">
+                        {{#each gallery}}
+                            <a href="{{this.fileUrl}}" data-lightbox="gallery" data-title=""><img src="{{this.fileUrl}}" alt=""></a>
+                        {{/each }}
+                    </div>
+
+                    {{#if gallery.[1]}}
+                        <div id="product-slider-nav">
+                            {{#each gallery}}
+                                <div>
+                                    <img src="{{this.fileUrl}}" alt="">
+                                </div>
+                            {{/each }}
+                        </div>
+                    {{/if}}
+                </div>
+                <div class="product-content product-single-block">
+                    <button 
+                        class="btn btn-outline btn-small product__like-btn js-favorite-btn {{#isFavorite}} active {{/isFavorite}}"
+                        data-product-id="{{product.id}}"
+                        >{{> svg/like}}</button>
+                    <p class="title noselect">{{ translate.name }}</p>
+
+                    {{#if inStock}}
+                        <p class="instock noselect">В наявності</p>
+                    {{else}}
+                        <p class="instock not noselect">Немає в наявності</p>
+                    {{/if}}
+
+                    <p class="price noselect">{{ product.price }} грн</p>
+
+                    {{#if content.sizeGridImg}}
+                        <a href="{{content.sizeGridImg}}" class="btn btn-outline noselect" data-lightbox="image-1" data-title="Розмірна сітка">Розмірна сітка</a>
+                    {{/if}}
+
+                    <div class="product-single-row">
+
+                        {{#if variants.length}}
+                            <div class="item">
+                                <p class="item-title noselect">Розмір</p>
+                                <div id="js-product-variant" class="js-select">
+                                    {{#each variants}}
+                                        <p data-value="{{ this.id }}">{{this.name}}</p>
+                                    {{/each}}
+                                </div>
+                            </div>
+                        {{/if}}
+
+                        <div class="item">
+                            <p class="item-title">Кількість</p>
+
+                            <div class="counter js-counter-product">
+                                <button class="simbol js-decrease" role="button">{{> svg/minus }}</button>
+                                <p class="value">1</p>
+                                <button class="simbol js-increase" role="button">{{> svg/add }}</button>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <p class="text noselect">
+                                *ПРИ КУПІВЛІ ВІД 10 ТОВАРІВ ДІЄ ЗНИЖКА 40%
+                            </p>
+                        </div>
+                    </div>
+
+                    <button 
+                        class="btn btn-white js-add-to-bucket"
+                        id="js-product-counter-target" 
+                        data-product-id="{{product.id}}" 
+                        data-product-count="1" 
+                        data-product-variant=""
+                    >
+                        <p>До кошика</p>
+                        {{> svg/bucket }}
+                    </button>
+
+                    <table class="params-table">
+                        
+                        <tr>
+                            <td>Склад</td>
+                            <td>{{ content.warehouse }}</td>
+                        </tr>
+                        <tr>
+                            <td>Код#</td>
+                            <td>{{ content.code }}</td>
+                        </tr>
+                        <tr>
+                            <td>Країна</td>
+                            <td>{{ content.country }}</td>
+                        </tr>
+                        <tr>
+                            <td>Доставка</td>
+                            <td>Нова Пошта, Укр Пошта</td>
+                        </tr>
+
+                        {{#if content.additionalsParams }}
+
+                            {{#each content.additionalsParams}}
+                                <tr>
+                                    <td>{{this.key}}</td>
+                                    <td>{{this.value}}</td>
+                                </tr>
+                            {{/each}}
+
+                        {{/if }}
+
+                    </table>
+                </div>
+            
+            </div>
+
+            <div class="product-description-block">
+                <p class="title">Опис</p>
+                <div>
+
+                    
+                    <p>Фольгований шар надійно зберігає тепло, невідчутний по вазі і стійкий до здавлення. При цьому інші шари мають особливу структуру волокон, що дозволяє волозі вільно випаровуватися, а нога при цьому залишається сухою. Черевики Енерджі бежеві Winterfrost 800 підходять як для активного відпочинку, Щоденні використання, так і в сфері силових структур.</p>
+
+                    <p>Тактичні черевики – це взуття, спеціально розроблене для використання військовими та працівниками інших силових структур. Тактичні черевики облегшеного типу почали виготовляти відносно не так давно, приблизно у 2000-х роках. Причиною того стало бажання покращення зручності та комфорту військових, оскільки раніше всесезонно використовувались берци, в яких було не надто комфортно в більш теплі пори року. Тому, загальним характеристикам тактичного взуття було приділено досить багато уваги, а саме черевики повинні бути:</p>
+
+
+                    <ul>
+
+                        <li> · зносостійкі та міцні, щоб витримувати важкі умови експлуатації та тривалий термін служби.</li>
+                        <li>· вологовідштовхувальні, позаяк тактичні черевики повинні підходити для використання у будь-яку погоду та за будь-яких умов.</li>
+                        <li>· повітропроникні та мати властивість швидко висихати.</li>
+                        <li>· підошва взуття повинна бути легка та гнучка, що дозволяє більш комфортно рухатися в умовах, де необхідна швидка реакція.</li>
+                        <li>
+                            · конструкція взуття повинна бути анатомічна, для захисту від травмування, а також для уникнення перенавантаження ніг.
+                        </li>
+                    </ul>
+
+
+                    <p>Отже, представлена модель тактичних кросівок теж має ряд цих особливостей, що робить їх ідеальними для використання при підвищеній активності.</p>
+
+                    <p>Варто звернути увагу також на матеріали, з яких виготовлені кросівки – а саме комбінація шкіри нубук та тканини Cordura.</p>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>

@@ -1,0 +1,44 @@
+<div class="account__panel">
+    <div class="panel__item">
+        <a href="/checkout">
+            {{> svg/bucket}}
+            <p>Кошик</p>
+            {{> svg/ar-right}}
+        </a>
+    </div>
+    <div class="panel__item {{#if isFavorities}} active {{/if}}">
+        <a href="/account/favorities">
+            {{> svg/like}}
+            <p>Вибране</p>
+            {{> svg/ar-right}}
+        </a>
+    </div>
+    <div class="panel__item {{#if isBonuses}} active {{/if}}" >
+        <a href="/account/bonuses">
+            {{> svg/gift}}
+            <p>Бонуси</p>
+            {{> svg/ar-right}}
+        </a>
+    </div>
+    <div class="panel__item {{#if isHistory}} active {{/if}}">
+        <a href="/account/orders-history">
+            {{> svg/record}}
+            <p>Історія покупок</p>
+            {{> svg/ar-right}}
+        </a>
+    </div>
+    <div class="panel__item {{#if isSettings}} active {{/if}}" >
+        <a href="/account">
+            {{> svg/setting}}
+            <p>Налаштування профілю</p>
+            {{> svg/ar-right}}
+        </a>
+    </div>
+    <div class="panel__item">
+        <a href="/publick/auth/logout" >
+            {{> svg/logout}}
+            <p>Вийти з облікового запису</p>
+            {{> svg/ar-right}}
+        </a>
+    </div>
+</div>

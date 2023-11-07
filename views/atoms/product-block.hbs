@@ -1,0 +1,25 @@
+<div class="product">
+    <div class="product__image">
+        <img src="{{ product.previewMedia.url }}" alt="">
+    </div>
+    <div class="product__content">
+        <p class="present">В наявності</p>
+        <p class="name">{{ product.translate.name }}</p>
+        <p class="price">{{ product.price }} грн</p>
+        <div class="product__btns">
+            <a class="btn btn-outline btn-small" href="/products/single/{{product.key}}">Детальніше</a>
+            <button 
+                class="btn btn-outline btn-small js-add-to-bucket" 
+                data-product-id="{{product.id}}" 
+                data-product-count="1" 
+                data-product-variant=""
+            ><p>До кошика</p>{{> svg/bucket}}</button>
+            <button 
+                class="btn btn-outline btn-small js-favorite-btn {{#product.isFavorite}} active {{/product.isFavorite}}"
+                data-product-id="{{product.id}}"
+            >
+                {{> svg/like}}
+            </button>
+        </div>
+    </div>
+</div>
